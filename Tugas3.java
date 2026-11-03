@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Tugas3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah toko: ");
+        int jumlahToko = sc.nextInt();
+        int totalBarangSemuaToko = 0;
+        int maxBarang = -1;
+        int tokoTerbanyak = 0;
+
+        for (int i = 1; i <= jumlahToko; i++) {
+            int totalBarangToko = 0;
+            System.out.print("Masukkan jumlah pelanggan: ");
+            int jumlahPelanggan = sc.nextInt();
+            for (int j = 1; j <= jumlahPelanggan; j++) {
+                System.out.print("Masukkan jumlah barang: ");
+                int jumlahBarang = sc.nextInt();
+                totalBarangToko += jumlahBarang;
+            }
+            totalBarangSemuaToko += totalBarangToko;
+            
+           if (totalBarangToko > maxBarang) {
+            maxBarang = totalBarangToko;
+            tokoTerbanyak = i;
+           }
+                
+        }
+        System.out.println("Total barang seluruh toko: " + totalBarangSemuaToko);
+        System.out.println("Toko dengan barang terbanyak: " + tokoTerbanyak);
+        sc.close();
+    }
+}
